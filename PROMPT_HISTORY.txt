@@ -1,0 +1,17 @@
+I decided to use the Plan, Adjust, Execute strategy, first focusing on core game mechanics like cars, trains, and streams for the chicken to naviagte and then moving on to bonus elements like coins and sprites. I used GitHub Copilot (with Claude Opus 4.5 as my chosen model) and cmu_graphics.
+
+(Plan Mode)
+
+1. I want to build a Crossy Road game in Python with the classic game mechanics (chicken crossing the road and has to navigate through cars, streams, and train tracks). Could you give me a detailed plan of how I could execute my vision for this Crossy Road game?
+2. (1) Let's use cmu_graphics for this game. (2) Let's do endless scrolling to match the original game. (3) Let's incorporate sprite images to elevate the UI/UX
+
+(Agent Mode)
+
+3. Start implementation
+4. It looks great! Is there any way to have the scrolling feel a bit smoother? Also, the original Crossy Road game is considered 2.5 dimensional. Is there a way to achieve this look with cmu_graphics?
+5. I really liked your last changes and how they elevated the UI/UX, but I think the smooth scrolling might have broken the code slightly. The chicken was not able to move a full step forward and was getting "stuck". The chicken was also being drawn under the logs when jumping on them, so I am not sure if this is an issue with the order the shapes are being drawn. I undid your last changes, so could you make some new changes?
+6. I'm thinking we maybe revert to the old scrolling. The smooth scrolling causes some lag with the chicken's movements. I undid your last changes because the chicken is still being drawn under the log. Could you implement the 2.5D UI/UX features without smooth scroll and ensure that the chicken is drawn over the logs?
+7. That looks great! I have added in a chicken_sprite to the assets folder. Could you add that in? Also, I would like there to be coins that the chicken can pick up. These coins can be randomly scattered across the map (I've included a coin_sprite). Also, could there be a counter for these? Could you stylize that counter in the top corner of the screen, as well as stylize the score and high score markers at the top of the screen?
+8. That looks great! Just a few small tweaks: At the very start of the game the chicken sometimes spawns on top of a tree. Could you change that so that won't happen? Also, I don't think the trophy emoji is loading correctly so I have added a trophy_sprite in assets to use instead.
+9. I'm noticing that there might be a slight issue with the scoring mechanism. The score doesn't get greater than 5. The user should get a point for each new step forward. Also could you increase the size of the trophy sprite? It's pretty small right now and hard to see.
+10. The scoring works a lot better now. One small bug I do see is that the score increases for every step forward. However, if the player moves back and then moves forward to the same position, their score is increasing by 1 when it really shouldn't. Only if they actually move a new row forward should the player's score increase by 1.
